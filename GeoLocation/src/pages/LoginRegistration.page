@@ -1,0 +1,58 @@
+<apex:page sidebar="false" showHeader="false" tabStyle="Employee__c" standardController="Registration__c" Extensions="LoginRegistrationExt">
+    <!--<apex:sectionHeader title="Employee Login" subtitle="Login Home"/> -->
+    <apex:form >
+    	<apex:pageMessages />
+        <apex:pageBlock title="LoginHome" mode="edit">
+            <apex:pageBlockSection >
+                <apex:pageBlockSection >
+                    <apex:image value="{!$Resource.LoginHomeImage}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Please Login" columns="1" collapsible="false">
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="First Name"/>
+                        <apex:inputField value="{!Registration__c.First_Name__c}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Last Name"/>
+                        <apex:inputField value="{!Registration__c.Last_Name__c}" Required="True"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Email"/>
+                        <apex:inputField value="{!Registration__c.Email__c}" Required="True"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Password"/>
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputSecret value="{!Registration__c.Password__c}" required="true"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Confirm Password"/>
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputSecret value="{!Registration__c.Confirm_Password__c}" required="true"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <!-- <apex:outputLabel value="Date of Birth"/> -->
+                        <apex:outputLabel value="{!$ObjectType.Registration__c.Fields.DOB__c.label}"/>
+                        <apex:inputField value="{!Registration__c.DOB__c}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Country"/>
+                        <apex:inputField value="{!Registration__c.Country__c}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="City"/>
+                        <apex:inputField value="{!Registration__c.City__c}"/>
+                    </apex:pageblockSectionItem>
+                    <apex:panelGrid columns="2" style="margin-left: 20px">
+                        <apex:commandButton value="Submit" action="{!save}"/>
+                        <apex:commandButton value="Cancel" action="{!cancel}"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

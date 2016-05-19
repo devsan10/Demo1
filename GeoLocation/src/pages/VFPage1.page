@@ -1,0 +1,27 @@
+<apex:page sidebar="false" showHeader="false" tabStyle="Employee__c">
+    <!--<apex:sectionHeader title="Employee Login" subtitle="Login Home"/> -->
+    <apex:form >
+        <apex:pageBlock title="LoginHome" mode="edit">
+            <apex:pageBlockSection >
+                <apex:pageBlockSection >
+                    <apex:image value="{!$Resource.LoginHomeImage}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Please Login" columns="1" collapsible="false">
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="User Name"/>
+                        <apex:inputText />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Password"/>
+                        <apex:inputText />
+                    </apex:pageblockSectionItem>
+                    <apex:panelGrid columns="2" style="margin-left: 20px">
+                        <apex:commandButton value="Login"/>
+                        <apex:commandButton value="Cancel"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

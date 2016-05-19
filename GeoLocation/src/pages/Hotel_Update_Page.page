@@ -1,0 +1,19 @@
+<apex:page standardcontroller="Hotel__c"  extensions="hotelControllerExtension" showHeader="true" sidebar="true">
+<apex:sectionHeader title="Hotel" subtitle="{!Hotel__c.name}"/>
+<apex:form >
+   <apex:pageblock title="Hotel Edit" mode="edit">
+   <apex:pageBlockButtons location="both">
+   <apex:commandButton value="Save" action="{!save}"/>
+   <apex:commandButton value="Cancel" action="{!cancel}"/>
+   </apex:pageBlockButtons>
+    <apex:pageBlockSection title="Information" columns="1">
+     <apex:inputfield value="{!Hotel__c.name}"/>
+    <apex:inputfield value="{!Hotel__c.Street__c}"/> 
+    <apex:inputfield value="{!Hotel__c.City__c}"/>
+    <apex:inputfield value="{!Hotel__c.State_Province__c}"/>
+    <apex:inputfield value="{!Hotel__c.Zip_Postal_Code__c}" />
+    <apex:inputfield value="{!Hotel__c.Country__c}"/>
+    </apex:pageBlockSection> 
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

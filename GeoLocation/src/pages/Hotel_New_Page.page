@@ -1,0 +1,29 @@
+<apex:page standardcontroller="Hotel__c"  showHeader="true" sidebar="true" id="thePage"> 
+<apex:sectionHeader title="Hotel Edit" subtitle="New Hotel"/>
+<apex:form id="theForm">
+   <apex:pageblock title="Hotel Edit" mode="edit" id="theBlock">
+   <apex:pageBlockButtons location="both">
+   <apex:commandButton value="Save" action="{!save}"/>
+   <apex:commandButton value="Cancel" action="{!cancel}"/>
+   </apex:pageBlockButtons>
+    <apex:pageBlockSection title="Information" columns="1" id="theSec">
+    <apex:inputfield value="{!hotel.name}"/>
+    <apex:inputfield value="{!hotel.Location__Latitude__s}" id="lat"/>
+    <apex:inputfield value="{!hotel.Location__Longitude__s}" id="long"/>
+    <apex:inputfield value="{!hotel.Street__c}"/> 
+    <apex:inputfield value="{!hotel.City__c}"/>
+    <apex:inputfield value="{!hotel.State_Province__c}"/>
+    <apex:inputfield value="{!hotel.Zip_Postal_Code__c}" />
+    <apex:inputfield value="{!hotel.Country__c}"/>
+    </apex:pageBlockSection> 
+  </apex:pageblock>
+    <script>
+        function setResult(){
+                document.getElementById('thePage:theForm:theBlock:theSec:lat').readOnly=true;
+                document.getElementById('thePage:theForm:theBlock:theSec:long').readOnly=true;
+                }
+        window.onload = setResult;
+    </script>
+                
+  </apex:form>
+ </apex:page>
